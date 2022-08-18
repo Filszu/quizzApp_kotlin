@@ -1,55 +1,42 @@
 package com.example.quizz
 
+import android.content.Context
+import android.util.Log
+import android.widget.Toast
+import com.google.gson.Gson
+
 object QuizQuestionsList{
 
     const val USER_NAME: String = "userName"
     const val TOTAL_QUESTIONS: String = "totalQuestions"
     const val CORRECT_ANSWERS: String = "correctAnswer"
 
-    fun getQuestions(): ArrayList<Question> {
-        val questionsList = ArrayList<Question>()
+    var questionsList = ArrayList<QuestionItem>()
 
-        val q1 = Question(
-            1, "country flag",
-            R.drawable.ic_flag_of_argentina,
-            "Argentina", "Germany", "Australia", "UK",
-            1,
-        )
-        questionsList.add(q1)
-
-        val q2 = Question(
-            2, "country flag",
-            R.drawable.ic_flag_of_australia,
-            "Argentina", "Germany", "Australia", "UK",
-            3,
-        )
-        questionsList.add(q2)
-
-        val q3 = Question(
-            3, "country flag",
-            R.drawable.ic_flag_of_belgium,
-            "Argentina", "Germany", "Australia", "Belgium",
-            4,
-        )
-        questionsList.add(q3)
-
-        val q4 = Question(
-            4, "country flag",
-            R.drawable.ic_flag_of_india,
-            "India", "Germany", "Australia", "UK",
-            1,
-        )
-        questionsList.add(q4)
-
-        val q5 = Question(
-            5, "country flag",
-            R.drawable.ic_flag_of_denmark,
-            "Argentina", "Denmark", "Australia", "UK",
-            2,
-        )
-        questionsList.add(q5)
-
-
+    fun getQuestions(): ArrayList<QuestionItem> {
+        Log.i("Q_list", "${questionsList[0].question}")
         return questionsList
+    }
+
+    fun parseJSONtoOBJ(applicationContext: Context){
+
+//        val jsonFileString = getJsonDataFromAsset(applicationContext, "${Config.CURR_QUIZ_ID}.json")
+        val jsonFileString = getJsonDataFromAsset(applicationContext, "1.json")
+        if (jsonFileString != null) {
+            Log.i("data", jsonFileString)
+        }
+        val gson = Gson()
+
+
+
+        questionsList  = gson.fromJson(jsonFileString, Question::class.java)
+//    avaibleQuizess.forEachIndexed { idx, avaibleQuizz -> Log.i("data", "> Item $idx:\n$avaibleQuizz") }
+
+        Toast.makeText(
+            applicationContext,
+            "${questionsList[1]?.correctAnswer}", Toast.LENGTH_LONG
+        ).show()
+
+
     }
 }

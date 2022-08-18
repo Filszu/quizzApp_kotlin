@@ -1,8 +1,8 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "question": "country flag",
-    "img": 1,
+    "img": "ic_flag_of_argentina",
     "optionA": "Argentina",
     "optionB": "Germany",
     "optionC": "Australia",
@@ -10,13 +10,23 @@
     "correctAnswer": 1
   },
   {
-    "id": "2",
+    "id": 2,
     "question": "country flag",
-    "img": 2,
+    "img": "ic_flag_of_australia",
     "optionA": "Argentina",
     "optionB": "Germany",
     "optionC": "Australia",
     "optionD": "UK",
     "correctAnswer": 3
+  },
+  {
+    "id": 3,
+    "question": "country flag",
+    "img": "pr1",
+    "optionA": "prońko Empire",
+    "optionB": "Proniasoladia",
+    "optionC": "pronkownia",
+    "optionD": "Pronias country",
+    "correctAnswer": 2
   }
 ]

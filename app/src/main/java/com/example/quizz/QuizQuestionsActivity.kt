@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurPos: Int = 1
-    private var mQList: ArrayList<Question>?=null
+    private var mQList: ArrayList<QuestionItem>?=null
     private var mSelectedOption : Int = 0
     private var activePanel: Boolean = true
     private var mCorrectAnswers: Int = 0
@@ -37,6 +37,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         mUserName = intent.getStringExtra(QuizQuestionsList.USER_NAME)
 
+        QuizQuestionsList.parseJSONtoOBJ(this)
         mQList = QuizQuestionsList.getQuestions()
 //        Log.i("Q size", "${questionsList.size}")
 
@@ -74,15 +75,24 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         defaultOptionView()
 
         if(mCurPos == mQList!!.size){
-            btn_submit.text = "FINISH"
+            btn_submit.text = "⏪FINISH⏩"
         }else{
             btn_submit.text = "SUBMIT"
         }
 
         progressBar?.progress = mCurPos
+        progressBar?.max=mQList!!.size
+
         tv_progress.text = "$mCurPos/${progressBar?.max}"
         tv_q.text = question!!.question
-        iv_img.setImageResource(question.img)
+//        iv_img.setImageResource(question.img)
+
+        val currQImg = question.img
+        iv_img.setImageResource(resources.getIdentifier(currQImg, "drawable", packageName))
+
+
+        Toast.makeText(this,
+            "tcurr img ${currQImg}", Toast.LENGTH_LONG).show()
 
         tv_A.text = question.optionA
         tv_B.text = question.optionB
@@ -155,6 +165,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
                     if(mCurPos == mQList!!.size){
+                        activePanel=false
                         btn_submit.text = "finish"
                     }else{
                         activePanel=false

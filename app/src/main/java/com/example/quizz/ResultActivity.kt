@@ -11,7 +11,8 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val username = intent.getStringExtra(QuizQuestionsList.USER_NAME)
+//        val username = intent.getStringExtra(QuizQuestionsList.USER_NAME)
+        val username = Config.USER_NAME
 
         val tvUserName = findViewById<TextView>(R.id.tv_userName)
         val tvScore = findViewById<TextView>(R.id.tv_score)
@@ -22,10 +23,14 @@ class ResultActivity : AppCompatActivity() {
         val totalQ = intent.getIntExtra(QuizQuestionsList.TOTAL_QUESTIONS, 0)
         val correctA = intent.getIntExtra(QuizQuestionsList.CORRECT_ANSWERS, 0)
 
+        Config.TOTAL_CORRECT_A+=correctA
+        Config.TOTAL_WRONG_A+=(totalQ-correctA)
+        Config.TOTAL_QUIZES_COMPLETED++
+
         tvScore.text = "your score: $correctA / $totalQ"
 
         btn.setOnClickListener{
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, StartingPage::class.java))
         }
 
 

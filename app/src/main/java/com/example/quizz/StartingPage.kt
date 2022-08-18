@@ -1,16 +1,19 @@
 package com.example.quizz
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.net.toUri
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+
 
 class StartingPage : AppCompatActivity() {
 
@@ -24,6 +27,7 @@ class StartingPage : AppCompatActivity() {
 
         quizzListContainer = findViewById<LinearLayout>(R.id.quizListContainer)
 
+
         parseJSONtoOBJ(this)
         createFromQuizList()
 
@@ -32,7 +36,7 @@ class StartingPage : AppCompatActivity() {
 
 }
 
-fun parseJSONtoOBJ(applicationContext: Context){
+private fun parseJSONtoOBJ(applicationContext: Context){
 
 
     val jsonFileString = getJsonDataFromAsset(applicationContext, "avaibleQuizess.json")
@@ -40,7 +44,6 @@ fun parseJSONtoOBJ(applicationContext: Context){
         Log.i("data", jsonFileString)
     }
     val gson = Gson()
-
 
 
 
@@ -52,17 +55,6 @@ fun parseJSONtoOBJ(applicationContext: Context){
         "${avaibleQuizess[1]?.name}", Toast.LENGTH_LONG
     ).show()
 
-//    try {
-//        Toast.makeText(
-//            applicationContext,
-//            "${avaibleQuizess[2]?.name}", Toast.LENGTH_LONG
-//        ).show()
-//    }catch (e: Exception) {
-//        Toast.makeText(
-//            applicationContext,
-//            "$e", Toast.LENGTH_LONG
-//        ).show()
-//    }
 
 }
 
@@ -87,6 +79,21 @@ fun parseJSONtoOBJ(applicationContext: Context){
             startQuiz(quizItem.id)
         }
 
+        val ivImg: ImageView = quizItemView.findViewById(R.id.img)
+
+        try{
+            val variableValue: String = quizItem.img
+            ivImg.setImageResource(resources.getIdentifier(variableValue, "drawable", packageName))
+
+        }
+        catch(e: Exception){
+            ivImg.setImageResource(R.drawable.ic_wave_0)
+        }
+
+
+
+
+
         //adding to view
         quizzListContainer.addView(quizItemView)
 
@@ -97,6 +104,21 @@ fun parseJSONtoOBJ(applicationContext: Context){
             applicationContext,
             "Quiz id: ${quizID}", Toast.LENGTH_LONG
         ).show()
+
+        Config.CURR_QUIZ_ID = quizID
+        if(Config.USER_NAME!=""){
+            val intent = Intent(this, QuizQuestionsActivity::class.java)
+            startActivity(intent)
+        }
+        else{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        finish()
+
+
     }
 }
 

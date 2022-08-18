@@ -25,14 +25,6 @@
         android:textColor="@color/white"
         />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="262dp"
-        android:contentDescription="image"
-        tools:src="@drawable/ic_trophy"
-
-        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,6 +35,13 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pr2" />
+
     <TextView
         android:id="@+id/tv_congratulation"
         android:layout_width="match_parent"

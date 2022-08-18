@@ -9,5 +9,4 @@ data class avaibleQuizzItem(
     val creating_date: String,
     val name: String,
     val img: String,
-    val src: String
 )
