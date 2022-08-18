@@ -9,12 +9,14 @@
 
     <androidx.cardview.widget.CardView
 
+        android:id="@+id/cv_quizzItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
+        android:padding="105dp"
         app:cardBackgroundColor="#FCE9FF"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
@@ -30,16 +32,17 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/selected_option_border" />
+            android:background="@drawable/selected_option_border"
+            android:src="@drawable/ic_wave_0" />
 
         <TextView
             android:id="@+id/tv_quizzName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:text="quizzX"
 
             android:textSize="20sp"

@@ -8,51 +8,28 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class StartingPage : AppCompatActivity() {
 
     private lateinit var quizzListContainer:LinearLayout
+    private lateinit var avaibleQuizess:ArrayList<avaibleQuizzItem>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_starting_page)
 
-        val tvQ1Name = findViewById<TextView>(R.id.tv_quizz1Name)
         quizzListContainer = findViewById<LinearLayout>(R.id.quizListContainer)
 
-
-        addQuizView()
-
-
-        tvQ1Name.setOnClickListener {
-
-
-            parseJSONtoOBJ(this)
-
-            /*
-            val jsonFileString = getJsonDataFromAsset(applicationContext, "avaibleQuizess.json")
-            if (jsonFileString != null) {
-                Log.i("data", jsonFileString)
-            }
-            val gson = Gson()
+        parseJSONtoOBJ(this)
+        createFromQuizList()
 
 
 
 
-            var avaibleQuizess = gson.fromJson(jsonFileString, avaibleQuizz::class.java)
-            avaibleQuizess.forEachIndexed { idx, avaibleQuizz -> Log.i("data", "> Item $idx:\n$avaibleQuizz") }
-            Toast.makeText(this,
-                "${avaibleQuizess[0].name.toString()}", Toast.LENGTH_LONG).show()
-
-        }
-
-             */
-
-
-    }
 }
 
 fun parseJSONtoOBJ(applicationContext: Context){
@@ -67,8 +44,8 @@ fun parseJSONtoOBJ(applicationContext: Context){
 
 
 
-    var avaibleQuizess = gson.fromJson(jsonFileString, avaibleQuizz::class.java)
-    avaibleQuizess.forEachIndexed { idx, avaibleQuizz -> Log.i("data", "> Item $idx:\n$avaibleQuizz") }
+    avaibleQuizess = gson.fromJson(jsonFileString, avaibleQuizz::class.java)
+//    avaibleQuizess.forEachIndexed { idx, avaibleQuizz -> Log.i("data", "> Item $idx:\n$avaibleQuizz") }
 
     Toast.makeText(
         applicationContext,
@@ -89,14 +66,38 @@ fun parseJSONtoOBJ(applicationContext: Context){
 
 }
 
-    fun addQuizView(){
+    private fun createFromQuizList(){
+        for(el in avaibleQuizess){
+            addQuizView(el)
+        }
+    }
 
+    private fun addQuizView(quizItem:avaibleQuizzItem){
+
+        //create based on template
         val quizItemView:View = layoutInflater.inflate(R.layout.available_quizz_item_layout, null, false)
 
-        var editText:TextView = quizItemView.findViewById(R.id.tv_quizzName)
 
+        var editText:TextView = quizItemView.findViewById(R.id.tv_quizzName)
+        editText.text = quizItem.name
+
+        val cardView: CardView = quizItemView.findViewById(R.id.cv_quizzItem)
+
+        cardView.setOnClickListener {
+            startQuiz(quizItem.id)
+        }
+
+        //adding to view
         quizzListContainer.addView(quizItemView)
 
     }
 
+    private fun startQuiz(quizID:Int){
+        Toast.makeText(
+            applicationContext,
+            "Quiz id: ${quizID}", Toast.LENGTH_LONG
+        ).show()
+    }
 }
+
+

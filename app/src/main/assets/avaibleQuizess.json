@@ -1,14 +1,20 @@
 [
   {
+    "id": 0,
     "name": "Flagi",
     "author": "Filszu",
     "creating_date": "20-08-15",
-    "category": "geo"
+    "category": "geo",
+    "img": "",
+    "src": "quiz1"
   },
   {
+    "id": 1,
     "name": "pronias QUIZZ",
     "author": "Filszu",
     "creating_date": "20-08-18",
-    "category": "geo"
+    "category": "geo",
+    "img": "",
+    "src": "pronkoQuizz.json"
   }
 ]
