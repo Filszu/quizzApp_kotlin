@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "question": "country flag",
+    "img": 1,
+    "optionA": "Argentina",
+    "optionB": "Germany",
+    "optionC": "Australia",
+    "optionD": "UK",
+    "correctAnswer": 1
+  },
+  {
+    "id": "2",
+    "question": "country flag",
+    "img": 2,
+    "optionA": "Argentina",
+    "optionB": "Germany",
+    "optionC": "Australia",
+    "optionD": "UK",
+    "correctAnswer": 3
+  }
+]

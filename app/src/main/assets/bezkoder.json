@@ -1,0 +1,18 @@
+[
+  {
+    "name": "bezkoder",
+    "age": "26",
+    "messages": [
+      "hello",
+      "becoming zKoder"
+    ]
+  },
+  {
+    "name": "bezkoder Master",
+    "age": 30,
+    "messages": [
+      "I am Kotlin Master",
+      "still learning Kotlin"
+    ]
+  }
+]
