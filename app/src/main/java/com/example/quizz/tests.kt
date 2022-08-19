@@ -1,5 +1,8 @@
 package com.example.quizz
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+
 
 
 fun main(){
