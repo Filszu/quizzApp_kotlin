@@ -91,9 +91,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         iv_img.setImageResource(resources.getIdentifier(currQImg, "drawable", packageName))
 
 
-        Toast.makeText(this,
-            "tcurr img ${currQImg}", Toast.LENGTH_LONG).show()
-
         tv_A.text = question.optionA
         tv_B.text = question.optionB
         tv_C.text = question.optionC

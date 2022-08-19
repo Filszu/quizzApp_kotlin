@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.core.net.toUri
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 
 
@@ -27,6 +27,10 @@ class StartingPage : AppCompatActivity() {
 
         quizzListContainer = findViewById<LinearLayout>(R.id.quizListContainer)
 
+
+        val snackbar = Snackbar
+            .make(quizzListContainer, "Your life master and guide in life is Filszu\uD83D\uDC51", Snackbar.LENGTH_LONG)
+        snackbar.show()
 
         parseJSONtoOBJ(this)
         createFromQuizList()
@@ -50,10 +54,6 @@ private fun parseJSONtoOBJ(applicationContext: Context){
     avaibleQuizess = gson.fromJson(jsonFileString, avaibleQuizz::class.java)
 //    avaibleQuizess.forEachIndexed { idx, avaibleQuizz -> Log.i("data", "> Item $idx:\n$avaibleQuizz") }
 
-    Toast.makeText(
-        applicationContext,
-        "${avaibleQuizess[1]?.name}", Toast.LENGTH_LONG
-    ).show()
 
 
 }
