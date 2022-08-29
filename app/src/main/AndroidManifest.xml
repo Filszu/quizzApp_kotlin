@@ -17,6 +17,9 @@
             android:name=".StartingPage"
             android:exported="false" />
         <activity
+            android:name=".UserPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
             android:name=".QuizQuestionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UserPage"
+            android:name=".testActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">

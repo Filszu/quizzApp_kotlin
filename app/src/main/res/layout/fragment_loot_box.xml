@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".lootbox.LootBox"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <ImageView
+        android:id="@+id/iv_chest"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/chest_1"
+
+
+
+        />
+
+    <ImageView
+        android:id="@+id/iv_puzzle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/puzzle_fragment"
+
+
+        />
+
+
+</LinearLayout>
