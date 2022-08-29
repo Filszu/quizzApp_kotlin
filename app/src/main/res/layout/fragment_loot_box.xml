@@ -7,22 +7,38 @@
     tools:context=".lootbox.LootBox"
     android:orientation="vertical"
     >
-
-    <Button
-        android:id="@+id/button2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        >
 
-    <ImageView
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
         android:id="@+id/iv_chest"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:background="@drawable/chest_1"
+        android:layout_weight="2"
 
 
 
         />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/iv_puzzle"
@@ -30,6 +46,7 @@
         android:layout_height="wrap_content"
 
         android:src="@drawable/puzzle_fragment"
+        android:visibility="invisible"
 
 
         />

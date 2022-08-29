@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "ziaba",
+    "author": "Filszu",
+    "creating_date": "20-08-29",
+    "player_cards": [1,2,3]
+  },
+  {
+    "id": 1,
+    "name": "ziaba",
+    "author": "Filszu",
+    "creating_date": "20-08-29",
+    "player_cards": []
+  }
+]

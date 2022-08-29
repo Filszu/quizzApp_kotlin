@@ -14,7 +14,10 @@
         android:theme="@style/Theme.Quizz"
         tools:targetApi="31">
         <activity
-            android:name=".StartingPage"
+            android:name=".puzzles.PlayerPrizesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".testActivity"
             android:exported="false" />
         <activity
             android:name=".UserPage"
@@ -30,7 +33,7 @@
             android:name=".QuizQuestionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".testActivity"
+            android:name=".StartingPage"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
