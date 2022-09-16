@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "Czy Aleks jest większy od Tery?",
+    "img": "al0",
+    "optionA": "Tak",
+    "optionB": "Nie",
+    "correctAnswer": 2
+  },
+  {
+    "id": 2,
+    "question": "Ile Aleks ma wzrostu?",
+    "img": "al1",
+    "optionA": "120cm",
+    "optionB": "190cm",
+    "optionC": "160cm",
+    "optionD": "90cm",
+    "correctAnswer": 3
+  },
+  {
+    "id": 3,
+    "question": "Ile Aleks ma dziewczyn (nie licząc przedszkola)",
+    "img": "al0",
+    "optionA": "2",
+    "optionB": "1",
+    "optionC": "9",
+    "optionD": "0",
+    "correctAnswer": 4
+  },
+  {
+    "id": 4,
+    "question": "Co Lubi ogladac Aleks?",
+    "img": "al1",
+    "optionA": "Pokemony",
+    "optionB": "Youtube",
+    "optionC": "PsiPatrol",
+    "optionD": "Dzieci",
+    "correctAnswer": 3
+  },
+  {
+    "id": 5,
+    "question": "Ile rapow zrobil Aleks",
+    "img": "al0",
+    "optionA": "2",
+    "optionB": "3",
+    "optionC": "nie zrobił",
+    "optionD": "1",
+    "correctAnswer": 1
+  }
+]
+
+

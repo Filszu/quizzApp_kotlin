@@ -7,8 +7,8 @@
         android:fromAlpha="0"
         android:toAlpha="1.0">
     </alpha>
-    <translate android:fromYDelta="-10%p"
-        android:toYDelta="-60%p"
+    <translate android:fromYDelta="100%p"
+        android:toYDelta="-10%p"
         android:duration = "500"
 
 

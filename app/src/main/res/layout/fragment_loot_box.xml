@@ -7,6 +7,11 @@
     tools:context=".lootbox.LootBox"
     android:orientation="vertical"
     >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,10 +20,12 @@
         >
 
 
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
+
 
         <ImageView
         android:id="@+id/iv_chest"
@@ -40,16 +47,33 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_puzzle"
+        <ImageView
+            android:id="@+id/iv_puzzle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/puzzle_fragment"
+            android:visibility="invisible"
+
+
+            />
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_openChest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:src="@drawable/puzzle_fragment"
-        android:visibility="invisible"
-
-
+        android:text="open chest🎬"
+        android:textSize="25sp"
         />
 
+    <Button
+        android:id="@+id/btn_goToYourCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Collection"
+        android:textSize="25sp"
+        />
 
 </LinearLayout>

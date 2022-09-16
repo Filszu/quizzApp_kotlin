@@ -29,6 +29,10 @@ class ResultActivity : AppCompatActivity() {
 
         tvScore.text = "your score: $correctA / $totalQ"
 
+        if(correctA == totalQ){
+            Config.CAN_OPEN_CHEST=true
+        }
+
         btn.setOnClickListener{
             startActivity(Intent(this, StartingPage::class.java))
         }

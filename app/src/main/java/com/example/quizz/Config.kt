@@ -6,4 +6,5 @@ object Config {
     var TOTAL_CORRECT_A=0
     var TOTAL_WRONG_A=0
     var CURR_QUIZ_ID = 0
+    var CAN_OPEN_CHEST=false //default false
 }

@@ -139,8 +139,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             activePanel=true
                             setQuestion()
                         }else->{
-                        Toast.makeText(this,
-                            "U have completed quizz ", Toast.LENGTH_LONG).show()
+//                        Toast.makeText(this,
+//                            "U have completed quizz ", Toast.LENGTH_LONG).show()
 
                             val intent = Intent(this, ResultActivity::class.java)
                             intent.putExtra(QuizQuestionsList.USER_NAME, mUserName)
