@@ -16,12 +16,29 @@
     "img": "pr1"
   },
   {
+    "id": 2,
+    "name": "Kubas Quiz",
+    "author": "HAJNOLAND",
+    "creating_date": "22-10-01",
+    "category": "ckziu2",
+    "img": "pr1"
+  },
+  {
     "id": 3,
     "name": "AlexusQuiz",
     "author": "Konradinio",
     "creating_date": "22-09-02",
     "category": "raperzy",
     "img": "al0"
+  },
+  {
+    "id": 4,
+    "name": "Kto powiedział",
+    "author": "HAJNOLAND",
+    "creating_date": "22-10-01",
+    "category": "raperzy",
+    "img": "ha1"
   }
+
 
 ]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "kto to powiedział: JAK TO NOTATEK NIE MACIE? Musicie mieć",
+    "img": "",
+    "optionA": "Szpadel",
+    "optionB": "Jakubowska",
+    "optionC": "Prońko",
+    "optionD": "Duriasz",
+    "correctAnswer": 1
+  },
+  {
+    "id":2 ,
+    "question": "Kto to powiedział: O wy cholerniki!",
+    "img": "",
+    "optionA": "Kmiećkowiak",
+    "optionB": "Pan Adamczak",
+    "optionC": "Piątkowska",
+    "optionD": "Skrzypczak",
+    "correctAnswer": 3
+  },
+  {
+    "id":3 ,
+    "question": "Kto to powiedzał: Jaki Grzyb!",
+    "img": "",
+    "optionA": "Jersh",
+    "optionB": "Palonka",
+    "optionC": "Kmiećkowiak",
+    "optionD": "Gądek",
+    "correctAnswer": 1
+  },
+  {
+    "id":4 ,
+    "question": "Kto to powiedział: Ja ci dam gówniarzu jeden rozpiedol mi na serwerze robić",
+    "img": "",
+    "optionA": "Jersh",
+    "optionB": "Wobalis",
+    "optionC": "Skrzypczak",
+    "optionD": "Wybranowski",
+    "correctAnswer": 2
+  },
+  {
+    "id":5 ,
+    "question": "Kto to powiedział:  strumykuje na innym serwie tera",
+    "img": "",
+    "optionA": "Janek Szymański",
+    "optionB": "Zbiax",
+    "optionC": "Pronias",
+    "optionD": "Na'an waciak",
+    "correctAnswer": 4
+  },
+  {
+    "id":6,
+    "question": "Kto to powiedział: Już komentują",
+    "img": "",
+    "optionA": "Wobalis",
+    "optionB": "Gądek",
+    "optionC": "Piątkowska",
+    "optionD": "Tera",
+    "correctAnswer": 4
+  }
+]
