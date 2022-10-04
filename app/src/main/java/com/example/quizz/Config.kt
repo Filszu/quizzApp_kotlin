@@ -7,4 +7,5 @@ object Config {
     var TOTAL_WRONG_A=0
     var CURR_QUIZ_ID = 0
     var CAN_OPEN_CHEST=false //default false
+    var AVAIBLE_PUZZLES_COUNT = 2
 }

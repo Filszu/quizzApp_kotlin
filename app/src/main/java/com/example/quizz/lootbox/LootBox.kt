@@ -1,6 +1,7 @@
 package com.example.quizz.lootbox
 
 import android.R.drawable
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.drawable.AnimationDrawable
 import android.graphics.drawable.Drawable
@@ -16,7 +17,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.quizz.Config.CAN_OPEN_CHEST
 import com.example.quizz.R
+import com.example.quizz.ResultActivity
 import com.example.quizz.databinding.FragmentLootBoxBinding
+import com.example.quizz.puzzles.PlayerPrizesActivity
 import com.example.quizz.sounds.openChestSound
 import java.io.IOException
 import java.io.InputStream
@@ -61,6 +64,14 @@ class LootBox : Fragment() {
 
 
 
+            binding.btnGoToYourCollection.setOnClickListener{
+
+
+                val intent = Intent(activity, PlayerPrizesActivity::class.java)
+
+                startActivity(intent)
+
+            }
             binding.ivChest.setOnClickListener {
 
                 if(CAN_OPEN_CHEST==true) {

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Kwiatkowska zapka",
+    "creating_date": "22-08-15",
+    "status": "unexplored",
+    "player_items": [1,2,3,4,9]
+  },
+  {
+    "id": 2,
+    "name": "Pronias Wep MAJESTER💻🖥🔧🔨⚒🛠",
+    "creating_date": "22-10-04",
+    "status": "explored",
+    "player_items": [1,2]
+  }
+]

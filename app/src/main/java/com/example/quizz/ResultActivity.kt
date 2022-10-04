@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.quizz.puzzles.PlayerPrizesActivity
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,4 +40,11 @@ class ResultActivity : AppCompatActivity() {
 
 
     }
+    fun goToYourCollection(){
+        val intent = Intent(this, PlayerPrizesActivity::class.java)
+        startActivity(intent)
+    }
 }
+//fun  goToYourCollection(){
+//
+//}
