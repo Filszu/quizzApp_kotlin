@@ -1,6 +1,7 @@
 package com.example.quizz.puzzles
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,20 +11,21 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContentProviderCompat.requireContext
+import com.example.quizz.Config
 import com.example.quizz.R
+import com.example.quizz.ResultActivity
 import com.example.quizz.databinding.ActivityPlayerPrizesBinding
 import com.example.quizz.getJsonDataFromAsset
-import com.example.quizz.lootbox.prize_card_img_id
-import com.example.quizz.lootbox.prize_card_set
+import com.example.quizz.puzzleView.PuzzleViewActivity
 import com.google.gson.Gson
 import java.io.IOException
 import java.io.InputStream
 
+lateinit var currPuzzle:PuzzleCollectionItem
 class PlayerPrizesActivity : AppCompatActivity() {
 
 
-    private lateinit var avaiblePuzzles:ArrayList<PuzzleCollectionItem>
+    lateinit var avaiblePuzzles:ArrayList<PuzzleCollectionItem>
     private lateinit var binding: ActivityPlayerPrizesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +37,16 @@ class PlayerPrizesActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        parseJSONtoOBJ(this)
+        avaiblePuzzles = getAvailablePuzzles(this)
+        createFromPuzzlesList()
+
+
+
 
     }
 
-    private fun parseJSONtoOBJ(applicationContext: Context){
+
+    private fun getAvailablePuzzles(applicationContext: Context):ArrayList<PuzzleCollectionItem>{
 
 
         val jsonFileString = getJsonDataFromAsset(applicationContext, "prizes/puzzles_list/puzzle.json")
@@ -50,8 +57,8 @@ class PlayerPrizesActivity : AppCompatActivity() {
 
 
 
-        avaiblePuzzles = gson.fromJson(jsonFileString, PuzzleCollection::class.java)
-        createFromPuzzlesList()
+        return gson.fromJson(jsonFileString, PuzzleCollection::class.java)
+
 
     }
 
@@ -64,6 +71,7 @@ class PlayerPrizesActivity : AppCompatActivity() {
 
     private fun addPuzzleView(item:PuzzleCollectionItem){
 
+
         //create based on template
         val puzzleItemView: View = layoutInflater.inflate(R.layout.available_quizz_item_layout, null, false)
 
@@ -75,7 +83,13 @@ class PlayerPrizesActivity : AppCompatActivity() {
         val cardView: CardView = puzzleItemView.findViewById(R.id.cv_quizzItem)
 
         cardView.setOnClickListener {
-//            startQuiz(quizItem.id)
+
+            Config.CURR_PUZZLE= item.id
+            currPuzzle=item
+
+            val intent = Intent(this, PuzzleViewActivity::class.java)
+
+            startActivity(intent)
         }
 
 
@@ -90,6 +104,7 @@ class PlayerPrizesActivity : AppCompatActivity() {
 //        discoverd
         if(item.status=="explored")
         {
+//            "#${item.id} | "
             puzzleName = item.name
             img_path = "puzzle_img/${item.id}/img.png"
         }

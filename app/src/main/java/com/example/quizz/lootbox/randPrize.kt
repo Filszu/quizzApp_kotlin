@@ -17,6 +17,7 @@ fun randCard(){
     prize_card_set=card_set.toString()
 
 
+//    get avaible quizes .len
 }
 
 fun haveOrNot(){

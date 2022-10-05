@@ -8,4 +8,5 @@ object Config {
     var CURR_QUIZ_ID = 0
     var CAN_OPEN_CHEST=false //default false
     var AVAIBLE_PUZZLES_COUNT = 2
+    var CURR_PUZZLE = 0
 }
